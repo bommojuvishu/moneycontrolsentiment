@@ -31,12 +31,12 @@ export class Apicall extends Component {
 
       renderTableData() {
         return this.state.news.map((tmp, index) => {
-           const { News , Sentiment } = tmp //destructuring
+           const { Date ,News , Sentiment ,links} = tmp //destructuring
            return (
               <tr>
-                 <td>{News}</td>
+                 <td> <a href={links} >{News}</a>  </td>
                  <td>{Sentiment}</td>
-              
+                 <td>{Date}</td>
               </tr>
            )
         })
@@ -46,12 +46,12 @@ export class Apicall extends Component {
         return (
             <div className="container day dark-scheme"> 
           <h1 id='title'>Money Control Stocks</h1>
-            <table  style ={{width:'50%'}} id='moneycontrol_table' className="table table-bordered">
+            <table  style ={{width:'75%'}} id='moneycontrol_table' className="table table-bordered">
             <thead>
       <tr>
         <th>News</th>
         <th>Sentiment</th>
-       
+        <th>Date</th>
       </tr>
     </thead>
                <tbody>
