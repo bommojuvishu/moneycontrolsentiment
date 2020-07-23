@@ -18,13 +18,16 @@ export class Apicall extends Component {
 
     componentDidMount() {
         console.log("inside the mount")
-        fetch('https://www.hitechadda.com/stockssentiment')
-        .then(res => res.json())
-        .then((data) => {
-          this.setState({ news: data })
-          console.log(this.state)
-        })
-        .catch(console.log)
+        
+        setInterval(async () => {
+            fetch('https://www.hitechadda.com/stockssentiment')
+            .then(res => res.json())
+            .then((data) => {
+              this.setState({ news: data })
+              console.log(this.state)
+            }).catch(console.log)
+        }, 120000);
+        
       }
 
       renderTableData() {
@@ -42,7 +45,7 @@ export class Apicall extends Component {
 
     render() {
         return (
-            <div className="container"> 
+            <div className="container day dark-scheme"> 
           <h1 id='title'>React Dynamic Table</h1>
             <table  style ={{width:'50%'}} id='moneycontrol_table' className="table table-bordered">
             <thead>
