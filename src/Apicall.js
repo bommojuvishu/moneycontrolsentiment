@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import './Apicall.css';
+import Nifty50 from './components/nifty50';
+import Topgains from './components/Topgains';
 
 export class Apicall extends Component {
     constructor(props) {
@@ -58,6 +60,9 @@ export class Apicall extends Component {
                   {this.renderTableData()}
                </tbody>
             </table>
+
+            <Nifty50 />
+            <Topgains/>
           </div>
            
         )
